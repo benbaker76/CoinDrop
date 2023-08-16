@@ -32,4 +32,4 @@ Just extract the folder to somewhere on your machine and create a link to CoinDr
 - v1.1 (25-12-2005) : You now press the Start keys to drop coins and can now carry on credits to multiple games.
 - v1.0 (24-12-2005) : First Release
 
-**NOTE:** You may not use this software in a commericial setting.
+**NOTE:** You may not use this software in a commercial setting.
