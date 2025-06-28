@@ -6,19 +6,19 @@ This program will allow you to send coin drops to MAME from within your front-en
 
 ## Screenshots
 
-![](/images/CoinDrop1.png)
+![](/.github/img/CoinDrop1.png)
 
-![](/images/CoinDrop2.png)
+![](/.github/img/CoinDrop2.png)
 
-![](/images/CoinDrop3.png)
+![](/.github/img/CoinDrop3.png)
 
-![](/images/CoinDrop4.png)
+![](/.github/img/CoinDrop4.png)
 
-![](/images/CoinDrop5.png)
+![](/.github/img/CoinDrop5.png)
 
-![](/images/CoinDrop6.png)
+![](/.github/img/CoinDrop6.png)
 
-![](/images/CoinDrop7.png)
+![](/.github/img/CoinDrop7.png)
 
 ## FAQ
 

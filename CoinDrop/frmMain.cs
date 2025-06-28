@@ -4,24 +4,25 @@
 // This source code is licensed under the BSD-style license found in the
 // LICENSE file in the root directory of this source tree. 
 
+using Microsoft.Win32;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.Text;
-using Microsoft.Win32;
-using System.Windows.Forms;
 using System.IO;
 using System.IO.Ports;
+using System.Reflection;
 using System.Runtime.InteropServices;
+using System.Text;
+using System.Windows.Forms;
 
 namespace CoinDrop
 {
     public partial class frmMain : Form
     {
-        private Timer m_insertCreditTimer = null;
-        private Timer m_insertDelayTimer = null;
+        private System.Windows.Forms.Timer m_insertCreditTimer = null;
+        private System.Windows.Forms.Timer m_insertDelayTimer = null;
         private SerialPort m_serialPort = null;
         private bool m_allowInsert = true;
 
@@ -32,8 +33,10 @@ namespace CoinDrop
 
         private void frmMain_Load(object sender, EventArgs e)
         {
-            this.Text = this.Text.Replace("[VERSION]", Global.Version);
-            this.lblAbout.Text = this.lblAbout.Text.Replace("[VERSION]", Global.Version);
+            var version = Assembly.GetExecutingAssembly().GetName().Version;
+
+            this.Text = this.Text.Replace("[VERSION]", version.ToString(3));
+            this.lblAbout.Text = this.lblAbout.Text.Replace("[VERSION]", version.ToString(3));
 
             cboCOMPort.Items.AddRange(SerialPort.GetPortNames());
             cboBaudRate.Items.AddRange(Global.BaudRateNames);
@@ -51,12 +54,12 @@ namespace CoinDrop
 
             LogFile.FileName = Settings.FileName.Log;
             LogFile.ClearLog();
-            LogFile.WriteEntry("CoinDrop " + Global.Version);
+            LogFile.WriteEntry("CoinDrop " + version.ToString(3));
 
-            m_insertCreditTimer = new Timer();
+            m_insertCreditTimer = new System.Windows.Forms.Timer();
             m_insertCreditTimer.Tick += new EventHandler(InsertCreditTimer);
 
-            m_insertDelayTimer = new Timer();
+            m_insertDelayTimer = new System.Windows.Forms.Timer();
             m_insertDelayTimer.Tick += new EventHandler(InsertDelayTimer);
 
             ReadConfig();

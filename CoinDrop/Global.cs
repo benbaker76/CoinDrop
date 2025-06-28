@@ -74,8 +74,6 @@ namespace CoinDrop
 
         public static bool Mode64 = false;
 
-        public static string Version = "2.21 BETA";
-
         public static frmMain MainForm = null;
 
         public static KeyboardHook KeyboardHook = null;
